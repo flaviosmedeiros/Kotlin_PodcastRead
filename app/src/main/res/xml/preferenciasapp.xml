@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Manage pref">
+
+        <EditTextPreference
+            android:title="RSS Fedd"
+            android:key="@string/rss_key"
+            android:dialogTitle="Edit RSS Feed"
+            android:dialogMessage="Type RSS Feed link"
+            android:positiveButtonText="Save"
+            android:negativeButtonText="Cancel" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
