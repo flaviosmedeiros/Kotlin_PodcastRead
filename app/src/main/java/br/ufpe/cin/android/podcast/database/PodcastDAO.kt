@@ -7,18 +7,19 @@ import br.ufpe.cin.android.podcast.data.Episodio
 @Dao
 interface PodcastDAO {
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(episodio: Episodio)
+
+    @Update(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun update(episodio: Episodio)
+
+    @Delete
+    suspend fun delete(episodio: Episodio)
+
     @Query("SELECT * FROM episodios")
     fun allEpisodios(): LiveData<List<Episodio>>
 
-    @Query("SELECT * FROM episodios WHERE titulo LIKE :titulo")
-    suspend fun searchByTitulo(titulo: String): Episodio?
+    @Query("SELECT * FROM episodios WHERE titulo LIKE :title")
+    suspend fun searchByTitle(title: String): Episodio?
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)//##Ignora a operação caso aja conflito
-    suspend fun insert(podcast: Episodio)
-
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun update(podcast: Episodio)
-
-    @Delete
-    suspend fun delete(podcast: Episodio)
 }

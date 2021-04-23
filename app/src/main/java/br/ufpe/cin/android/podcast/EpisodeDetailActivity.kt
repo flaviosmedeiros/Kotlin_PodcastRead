@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.ufpe.cin.android.podcast.databinding.ActivityEpisodeDetailBinding
 class EpisodeDetailActivity : AppCompatActivity() {
+
     private lateinit var binding : ActivityEpisodeDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEpisodeDetailBinding.inflate(layoutInflater)
@@ -17,9 +19,5 @@ class EpisodeDetailActivity : AppCompatActivity() {
             binding.description.text = extras.getString(MainActivity.EXTRA_DESCRIPTION)
             binding.link.text = extras.getString(MainActivity.EXTRA_LINK)
         }
-
-
-
-
     }
 }

@@ -10,8 +10,10 @@ data class Episodio(
     val titulo: String,
     val descricao: String,
     val linkArquivo: String,
-    val dataPublicacao: String
-) {
+    val dataPublicacao: String,
+    val posicaoPoscast: Int
+)
+{
     override fun toString(): String {
         return "$titulo ($dataPublicacao) => $descricao"
     }
